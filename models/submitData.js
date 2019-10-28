@@ -26,5 +26,7 @@ var bioSchema = new mongoose.Schema({
   }
 });
 
-const bioForm = mongoose.model("bioForm", bioSchema); // first parameter is the name of the collection and also the model name
+const bioForm = mongoose.model("bioForm", bioSchema); 
+// first parameter is the name of the collection and also the model name
+// second parameter is the schema to be used for the model
 module.exports = bioForm;
