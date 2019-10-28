@@ -8,7 +8,6 @@ const bodyparser = require("body-parser");
 const routes = require("./controllers/routes");
 const morgan = require("morgan");
 const multer = require("multer");
-
 const errorHandler = require("errorhandler");
 
 app.use(morgan("dev"));

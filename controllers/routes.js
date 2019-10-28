@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
     (bioForm.contactNumber2 = req.body.contactNumber2),
     (bioForm.hobbies = req.body.hobbies);
   // remains for the passport upload -- line 14
-  bioForm.save((err, doc) => {
+  bioForm.save((err, doc) => {  
     if (!err) {
       res.redirect("/new");
     } else {
