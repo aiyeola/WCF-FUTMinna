@@ -1,6 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-require("./model");
+require("./models");
 const app = express();
 const path = require("path");
 const expressHandlebars = require("express-handlebars");

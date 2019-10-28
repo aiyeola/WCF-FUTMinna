@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 const bioData = mongoose.model("bioForm"); // schema for the collection 'bioForm'
 
+
 router.get("/", (req, res) => {
   res.render("index");
 });
