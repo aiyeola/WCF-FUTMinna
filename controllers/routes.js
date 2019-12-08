@@ -26,7 +26,7 @@ router.post("/", (req, res) => {
     if (!err) {
       res.redirect("/new");
     } else {
-      res.send("error occured");
+      res.send("error occurred");
     }
   });
 });

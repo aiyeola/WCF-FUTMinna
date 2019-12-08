@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+require("dotenv").config();
 require("./models");
 const app = express();
 const path = require("path");
