@@ -7,7 +7,7 @@ mongoose.connect(
   { useNewUrlParser: true },
   error => {
     if (!error) {
-      console.log("Successfully connected to database");
+      console.log("Successfully connected to MongoDB");
     } else {
       console.log("Error connecting to database");  
     }

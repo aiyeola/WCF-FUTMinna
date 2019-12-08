@@ -1,5 +1,4 @@
 const express = require("express");
-const fs = require("fs");
 require("dotenv").config();
 require("./models");
 const app = express();
@@ -40,6 +39,6 @@ app.engine(
 app.set("view engine", "hbs");
 
 app.use("/", routes);
-app.listen("3000", () => {
-  console.log("Server started, listening on 3000");
+app.listen(process.env.PORT, () => {
+  console.log(`Server started, listening on ${process.env.PORT}`);
 });
