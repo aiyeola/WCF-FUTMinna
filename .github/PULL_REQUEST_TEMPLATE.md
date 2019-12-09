@@ -10,4 +10,4 @@ N/A
 #### Questions:
 N/A -->
 
-## As a best practice always pull from the main repo before making changes to existing code
+## As a best practice always pull from the main repo before making changes to existing code.
