@@ -32,7 +32,7 @@ app.engine(
   })
 );
 app.set("view engine", "hbs");
-
+app.use(express.static("src"));
 app.use("/", routes);
 app.listen(process.env.PORT, () => {
   console.log(`Server started, listening on ${process.env.PORT}`);
