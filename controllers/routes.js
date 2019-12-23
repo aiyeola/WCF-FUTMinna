@@ -1,9 +1,7 @@
 const express = require("express");
-const fs = require("fs");
 const mongoose = require("mongoose");
 const router = express.Router();
 const bioData = mongoose.model("bioForm"); // schema for the collection 'bioForm'
-
 
 router.get("/", (req, res) => {
   res.render("index");
@@ -11,9 +9,6 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   let bioForm = new bioData();
-  // var imgpath = "./uploads/";
-  // bioForm.img.data = fs.readFileSync(imgpath);
-  // bioForm.img.contentType = "image/png";
   (bioForm.displayPic = req.body.displayPic),
     (bioForm.fullName = req.body.fullName),
     (bioForm.department = req.body.department),
@@ -22,11 +17,11 @@ router.post("/", (req, res) => {
     (bioForm.contactNumber2 = req.body.contactNumber2),
     (bioForm.hobbies = req.body.hobbies);
   // remains for the passport upload -- line 14
-  bioForm.save((err, doc) => {  
+  bioForm.save((doc, err) => {
     if (!err) {
       res.redirect("/new");
     } else {
-      res.send("error occured");
+      res.send("error occurred");
     }
   });
 });
