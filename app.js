@@ -7,7 +7,6 @@ const expressHandlebars = require("express-handlebars");
 const bodyparser = require("body-parser");
 const routes = require("./controllers/routes");
 const morgan = require("morgan");
-const multer = require("multer");
 const errorHandler = require("errorhandler");
 
 app.use(morgan("dev"));
@@ -21,11 +20,6 @@ app.use(bodyparser.json());
 if ("development" === app.get("env")) {
   app.use(errorHandler());
 }
-app.use(
-  multer({
-    dest: "./uploads/"
-  }).single("singleInputFileName")
-);
 app.set("views", path.join(__dirname, "/views/"));
 
 app.engine(
