@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start:dev": "nodemon app.js"
   },
   "keywords": [
     "test",
@@ -22,13 +22,10 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mocha": "^6.2.2",
-    "mongodb": "^3.4.1",
     "mongoose": "^5.7.6",
-    "morgan": "^1.9.1",
-    "nodemon": "^1.19.4"
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "eslint-plugin-react": "^7.17.0"
+    "nodemon": "^2.0.2"
   }
 }

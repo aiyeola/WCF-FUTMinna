@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-require("./submitdata");
-const connectionUrl = "mongodb://localhost:27017/BioDataForm";
+require("./submitData");
+const connectionUrl =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/BioDataForm";
 
 mongoose.connect(connectionUrl, { useNewUrlParser: true }, error => {
   if (!error) {
