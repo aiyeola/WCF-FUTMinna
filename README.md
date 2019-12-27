@@ -8,7 +8,7 @@ Create an application that will help student administrators collect the database
 
 ## Motivation
 
-A desire to change the world by creating solutions to bugging problems
+A desire to change the world by creating creative solutions to problems
 
 ## Caution
 

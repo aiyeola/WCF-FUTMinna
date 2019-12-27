@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 var bioSchema = new mongoose.Schema({
-  img: {
-    data: Buffer,
-    contentType: String
-  },
   fullName: {
     type: String,
     required: "Required"
