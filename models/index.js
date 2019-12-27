@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 require("./submitData");
+require("dotenv").config();
 const connectionUrl =
   process.env.MONGODB_URI || "mongodb://localhost:27017/BioDataForm";
 

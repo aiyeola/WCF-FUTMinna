@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {{!-- <link rel="stylesheet" href="/src/css/bootstrap.min.css"> --}}
-    <link rel="stylesheet" href="/public/css/style.css">
     <title>FYB WCF</title>
 </head>
 
@@ -63,7 +61,20 @@
         .btn-custom:focus {
             box-shadow: 0 0 0 0.2rem rgba(190, 61, 61, 0.25);
         }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
+
 </body>
 
 
@@ -71,7 +82,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-{{!-- <script src="/src/js/bootstrap.bundle.min.js"></script> --}}
 </div>
 
 </html>
