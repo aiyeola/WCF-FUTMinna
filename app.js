@@ -22,7 +22,7 @@ if ("development" === app.get("env")) {
   app.use(errorHandler());
 }
 
-app.set("views", path.join(__dirname, "/views/"));
+app.set("views", path.join(__dirname, "views"));
 
 app.engine(
   "hbs",
