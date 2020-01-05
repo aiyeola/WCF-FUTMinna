@@ -8,6 +8,7 @@ const bodyparser = require("body-parser");
 const routes = require("./controllers/routes");
 const morgan = require("morgan");
 const errorHandler = require("errorhandler");
+const PORT = process.env.PORT || 8080;
 
 app.use(morgan("dev"));
 app.use(
@@ -20,11 +21,8 @@ app.use(bodyparser.json());
 if ("development" === app.get("env")) {
   app.use(errorHandler());
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> cdca166be9757c60f0af2747a81d9e058a724c76
-app.set("views", path.join(__dirname, "/views/"));
+app.set("views", path.join(__dirname, "views"));
 
 app.engine(
   "hbs",
@@ -34,9 +32,11 @@ app.engine(
     layoutsDir: __dirname + "/views/layouts"
   })
 );
+
 app.set("view engine", "hbs");
-app.use(express.static("src"));
+
 app.use("/", routes);
-app.listen(process.env.PORT, () => {
-  console.log(`Server started, listening on ${process.env.PORT}`);
+
+app.listen(PORT, () => {
+  console.log(`Server started, listening on ${PORT}`);
 });
