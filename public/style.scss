@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Pro:400,600|Raleway:400,600&display=swap');
+
+%hover-style {
+  content: "";
+  position: absolute;
+  background-color: red;
+  top: 100%;
+  left: 0;
+  width: 0;
+  margin-top: -5px;
+  height: 2px;
+  transition: width 0.5s ease;
+}
+
+@keyframes border-style {
+  0% {
+    border-bottom: 1px solid #ffffff;
+  }
+  100% {
+    border-bottom: 1px solid #000000;
+  }
+}
+
+@mixin smartphone {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(243, 229, 229);
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0rem 0;
+  width: 50%;
+  height: 82%;
+  color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+
+  @include smartphone {
+   width: 90%;
+   margin: 2rem 0;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  form {
+    position: relative;
+    font-family: "Crimson Pro", serif;
+
+    label {
+      display: block;
+      position: absolute;
+      font-family: inherit;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 20px;
+      font-family: inherit;
+      font-size: 1rem;
+      height: 37px;
+
+      &:placeholder-shown + label {
+        visibility: hidden;
+        z-index: -1;
+      }
+
+      &:not(:placeholder-shown) + label,
+      &:focus:not(:placeholder-shown) + label {
+        visibility: visible;
+        z-index: 2;
+        opacity: 1;
+        font-size: 1rem;
+        transform: translate3d(
+          0,
+          calc(50% - (0.8rem * 0.5) - (2.5rem * 1.8)),
+          0
+        );
+        transition: transform 0.4s ease;
+      }
+      /* Chrome, Safari, Edge, Opera */
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &[type="text"],
+      &[type="password"],
+      &[type="number"] {
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        background: transparent;
+        outline: none;
+        text-transform: capitalize;
+        transition: all ease 0.5s;
+
+        &:focus,
+        &:active {
+          animation: border-style 1s ease forwards;
+          background: transparent;
+        }
+      }
+
+      &[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #f12424;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        transition: all ease 0.5s;
+
+        &:hover {
+          cursor: pointer;
+          background: #ff0b0b;
+        }
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+}
