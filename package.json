@@ -4,9 +4,9 @@
   "description": "This app is inspired from looking for a solution to collecting biodata of students of the Winners' Campus Fellowship, FUTMinna without use of googleDocs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "start:dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "test",
@@ -27,5 +27,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiyeola/fybwcf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aiyeola/fybwcf/issues"
+  },
+  "homepage": "https://github.com/aiyeola/fybwcf#readme"
 }

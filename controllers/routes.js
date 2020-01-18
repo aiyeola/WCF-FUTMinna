@@ -9,24 +9,24 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   let bioForm = new bioData();
-  (bioForm.displayPic = req.body.displayPic),
     (bioForm.fullName = req.body.fullName),
     (bioForm.department = req.body.department),
-    (bioForm.email = req.body.email),
+    (bioForm.level = req.body.level),
     (bioForm.contactNumber1 = req.body.contactNumber1),
     (bioForm.contactNumber2 = req.body.contactNumber2),
-    (bioForm.hobbies = req.body.hobbies);
-  // remains for the passport upload -- line 14
+    (bioForm.hobbies = req.body.hobbies),
+    (bioForm.mentors = req.body.mentors);
+    
   bioForm.save((doc, err) => {
     if (!err) {
-      res.redirect("/new");
+      res.redirect("/newRequest");
     } else {
       res.send("error occurred");
     }
   });
 });
 
-router.get("/new", (req, res) => {
+router.get("/newRequest", (req, res) => {
   res.render("index2");
 });
 module.exports = router;
