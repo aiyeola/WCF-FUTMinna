@@ -8,8 +8,8 @@ var bioSchema = new mongoose.Schema({
   department: {
     type: String
   },
-  email: {
-    type: String
+  level: {
+    type: Number
   },
   contactNumber1: {
     type: Number
@@ -18,6 +18,9 @@ var bioSchema = new mongoose.Schema({
     type: Number
   },
   hobbies: {
+    type: String
+  },
+  mentors: {
     type: String
   }
 });
