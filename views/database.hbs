@@ -1,0 +1,29 @@
+<div class="container">
+	Show list of students that have submitted
+	<table>
+		<thead>
+			<tr>
+				<th>Full Name</th>
+				<th>Department</th>
+				<th>Level</th>
+				<th>Contact Number 1</th>
+				<th>Contact Number 2</th>
+				<th>Hobbies</th>
+				<th>Mentors</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each list}}
+			<tr>
+				<td>{{this.fullName}}</td>
+				<td>{{this.department}}</td>
+				<td>{{this.level}}</td>
+				<td>{{this.contactNumber1}}</td>
+				<td>{{this.contactNumber2}}</td>
+				<td>{{this.hobbies}}</td>
+				<td>{{this.mentors}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
