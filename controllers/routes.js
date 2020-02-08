@@ -1,32 +1,44 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
-const bioData = mongoose.model("bioForm"); // schema for the collection 'bioForm'
+const bioDataModel = mongoose.model("bioForm"); // schema for the collection 'bioForm'
 
 router.get("/", (req, res) => {
   res.render("index");
 });
 
 router.post("/", (req, res) => {
-  let bioForm = new bioData();
-    (bioForm.fullName = req.body.fullName),
+  insertRecord(req, res);
+});
+const insertRecord = (req, res) => {
+  let bioForm = new bioDataModel();
+  (bioForm.fullName = req.body.fullName),
     (bioForm.department = req.body.department),
     (bioForm.level = req.body.level),
     (bioForm.contactNumber1 = req.body.contactNumber1),
     (bioForm.contactNumber2 = req.body.contactNumber2),
     (bioForm.hobbies = req.body.hobbies),
     (bioForm.mentors = req.body.mentors);
-    
-  bioForm.save((doc, err) => {
-    if (!err) {
-      res.redirect("/newRequest");
-    } else {
-      res.send("error occurred");
+
+  bioForm.save((err, doc) => {
+    if (!err) res.redirect("/newrequest");
+    else {
+      console.log("Error during record insertion : " + err);
     }
+  });
+};
+router.get("/newrequest", (req, res) => {
+  res.render("index2");
+});
+
+router.get("/data", (req, res) => {
+  bioDataModel.find((err, docs) => {
+    if (!err) {
+      res.render("database", {
+        list: docs
+      });
+    } else console.log("Error in retrieving student database: " + err);
   });
 });
 
-router.get("/newRequest", (req, res) => {
-  res.render("index2");
-});
 module.exports = router;
