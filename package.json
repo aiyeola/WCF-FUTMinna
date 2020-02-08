@@ -1,7 +1,7 @@
 {
-  "name": "fybwcfbiodata",
+  "name": "wcffutmina",
   "version": "1.0.0",
-  "description": "This app is inspired from looking for a solution to collecting biodata of students of the Winners' Campus Fellowship, FUTMinna without use of googleDocs",
+  "description": "Simple CRUD app implementation for WCF FUTMinna",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -11,7 +11,8 @@
   "keywords": [
     "test",
     "database",
-    "form"
+    "form",
+    "winners campus fellowship"
   ],
   "author": "Aiyeola Victor",
   "license": "ISC",
@@ -30,10 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aiyeola/fybwcf.git"
+    "url": "git+https://github.com/aiyeola/WCF-FUTMinna.git"
   },
   "bugs": {
-    "url": "https://github.com/aiyeola/fybwcf/issues"
+    "url": "https://github.com/aiyeola/WCF-FUTMinna/issues"
   },
-  "homepage": "https://github.com/aiyeola/fybwcf#readme"
+  "homepage": "https://wcffutminna.live"
 }
