@@ -8,7 +8,7 @@ const bodyparser = require("body-parser");
 const routes = require("./controllers/routes");
 const morgan = require("morgan");
 const errorHandler = require("errorhandler");
-const PORT = process.env.PORT || 8080;
+
 
 app.use(morgan("dev"));
 app.use(
@@ -38,6 +38,7 @@ app.use(express.static(path.join(__dirname + "/public")));
 
 app.use("/", routes);
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server started, listening on ${PORT}`);
 });
