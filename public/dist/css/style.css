@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Pro:400,600|Raleway:400,600&display=swap");
+.container form input[type="text"], .container form input[type="password"], .container form input[type="tel"], .container form input[type="number"], .container form input[type="email"] {
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background: transparent;
+  outline: none;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.container form input:focus[type="text"], .container form input:focus[type="password"], .container form input:focus[type="tel"], .container form input:focus[type="number"], .container form input:focus[type="email"], .container form input:active[type="text"], .container form input:active[type="password"], .container form input:active[type="tel"], .container form input:active[type="number"], .container form input:active[type="email"] {
+  -webkit-animation: border-style 1s ease forwards;
+          animation: border-style 1s ease forwards;
+  background: transparent;
+}
+
 @-webkit-keyframes border-style {
   0% {
     border-bottom: 1px solid #ffffff;
@@ -7,6 +22,7 @@
     border-bottom: 1px solid #000000;
   }
 }
+
 @keyframes border-style {
   0% {
     border-bottom: 1px solid #ffffff;
@@ -71,6 +87,12 @@ body {
   font-weight: 600;
 }
 
+@media screen and (max-width: 768px) {
+  .container h1 {
+    font-size: 1.6rem;
+  }
+}
+
 .container form {
   position: relative;
   font-family: "Crimson Pro", serif;
@@ -117,19 +139,7 @@ body {
 }
 
 .container form input[type="text"], .container form input[type="password"], .container form input[type="tel"], .container form input[type="number"] {
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  background: transparent;
-  outline: none;
   text-transform: capitalize;
-  -webkit-transition: all ease 0.5s;
-  transition: all ease 0.5s;
-}
-
-.container form input[type="text"]:focus, .container form input[type="text"]:active, .container form input[type="password"]:focus, .container form input[type="password"]:active, .container form input[type="tel"]:focus, .container form input[type="tel"]:active, .container form input[type="number"]:focus, .container form input[type="number"]:active {
-  -webkit-animation: border-style 1s ease forwards;
-          animation: border-style 1s ease forwards;
-  background: transparent;
 }
 
 .container form input[type="submit"] {

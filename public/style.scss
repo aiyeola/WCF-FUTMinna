@@ -5,13 +5,26 @@ $bg-color: #f3e5e5;
 %hover-style {
   content: "";
   position: absolute;
-  background-color: red;
+  background-color: $radio-color;
   top: 100%;
   left: 0;
   width: 0;
   margin-top: -5px;
   height: 2px;
   transition: width 0.5s ease;
+}
+%input-type-style {
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background: transparent;
+  outline: none;
+  transition: all ease 0.5s;
+
+  &:focus,
+  &:active {
+    animation: border-style 1s ease forwards;
+    background: transparent;
+  }
 }
 
 @keyframes border-style {
@@ -75,6 +88,10 @@ body {
     padding: 0 0 20px;
     text-align: center;
     font-weight: 600;
+
+    @include smartphone {
+      font-size: 1.6rem;
+    }
   }
 
   form {
@@ -124,18 +141,12 @@ body {
       &[type="password"],
       &[type="tel"],
       &[type="number"] {
-        border: none;
-        border-bottom: 1px solid #ffffff;
-        background: transparent;
-        outline: none;
+        @extend %input-type-style;
         text-transform: capitalize;
-        transition: all ease 0.5s;
+      }
 
-        &:focus,
-        &:active {
-          animation: border-style 1s ease forwards;
-          background: transparent;
-        }
+      &[type="email"] {
+        @extend %input-type-style;
       }
 
       &[type="submit"] {
