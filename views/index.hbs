@@ -3,29 +3,50 @@
     <h1>WCF FUTMinna BioData Form</h1>
 
     <form action="/" method="POST">
-
         <input type="text" name="fullName" id="name" placeholder="Full Name" required>
-        <label for="name">Full Name</label>
-
+        <label for="name" class="popup-label">Full Name</label>
 
         <input type="text" name="department" id="department" placeholder="Department" required>
-        <label for="department">Department</label>
+        <label for="department" class="popup-label">Department</label>
+
+        <input type="email" name="email" id="email" placeholder="e-mail" required>
+        <label for="email" class="popup-label">E-mail</label>
 
 
         <input type="number" name="level" id="level" placeholder="level" required>
-        <label for="level">Level</label>
+        <label for="level" class="popup-label">Level</label>
 
-        <input type="number" name="contactNumber1" id="contactNumber1" placeholder="Contact Number 1" required>
-        <label for="contactNumber1">Preferably WhatsApp</label>
+        <input type="tel" name="contactNumber1" id="contactNumber1" placeholder="Contact Number 1" required>
+        <label for="contactNumber1" class="popup-label">Preferably WhatsApp &#129488;</label>
 
-        <input type="number" name="contactNumber2" id="contactNumber2" placeholder="Contact Number 2">
-        <label for="contactNumber2">Phone Number</label>
+        <input type="tel" name="contactNumber2" id="contactNumber2" placeholder="Contact Number 2">
+        <label for="contactNumber2" class="popup-label">Phone Number</label>
 
-        <input type="text" name="hobbies" id="hobbies" placeholder="hobbies" required>
-        <label for="hobbies">Hobbies</label>
-
-        <input type="text" name="mentors" id="mentors" placeholder="mentors" required>
-        <label for="mentors">Who are your Mentors?</label>
+        <div class="radio-group">
+        
+            <label class="radio">
+                <input type="radio" name="sex" value="Male" required>
+                Male
+                <span></span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="sex" value="Female" required>
+                Female
+                <span></span>
+            </label>
+            <br>
+            <br>
+            <label class="radio">
+                <input type="radio" name="campus" value="Bosso" required>
+                Bosso
+                <span></span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="campus" value="Gidan-Kwano" required>
+                Gidan-Kwano
+                <span></span>
+            </label>
+        </div>
 
         <input type="submit" value="Submit Details">
     </form>
