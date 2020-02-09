@@ -20,10 +20,7 @@ var bioSchema = new mongoose.Schema({
   contactNumber2: {
     type: Number
   },
-  hobbies: {
-    type: String
-  },
-  mentors: {
+  sex: {
     type: String
   },
   campus: {
