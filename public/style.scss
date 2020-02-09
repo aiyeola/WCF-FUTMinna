@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Crimson+Pro:400,600|Raleway:400,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Crimson+Pro:400,600|Raleway:400,600&display=swap");
 
+$radio-color: #ff0000;
+$bg-color: #f3e5e5;
 %hover-style {
   content: "";
   position: absolute;
@@ -36,7 +38,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(243, 229, 229);
+  background: $bg-color;
   font-family: "Raleway", sans-serif;
   min-height: 100vh;
 }
@@ -54,8 +56,8 @@ body {
   padding: 70px 30px;
 
   @include smartphone {
-   width: 90%;
-   margin: 2rem 0;
+    width: 90%;
+    margin: 2rem 0;
   }
 
   .avatar {
@@ -79,7 +81,7 @@ body {
     position: relative;
     font-family: "Crimson Pro", serif;
 
-    label {
+    .popup-label {
       display: block;
       position: absolute;
       font-family: inherit;
@@ -93,13 +95,13 @@ body {
       font-size: 1rem;
       height: 37px;
 
-      &:placeholder-shown + label {
+      &:placeholder-shown + .popup-label {
         visibility: hidden;
         z-index: -1;
       }
 
-      &:not(:placeholder-shown) + label,
-      &:focus:not(:placeholder-shown) + label {
+      &:not(:placeholder-shown) + .popup-label,
+      &:focus:not(:placeholder-shown) + .popup-label {
         visibility: visible;
         z-index: 2;
         opacity: 1;
@@ -120,6 +122,7 @@ body {
 
       &[type="text"],
       &[type="password"],
+      &[type="tel"],
       &[type="number"] {
         border: none;
         border-bottom: 1px solid #ffffff;
@@ -148,6 +151,69 @@ body {
         &:hover {
           cursor: pointer;
           background: #ff0b0b;
+        }
+      }
+    }
+
+    .radio-group {
+      padding: 0 1rem 1rem 0;
+
+      @include smartphone {
+        padding: 0 0.2rem 1rem 0;
+      }
+
+      h4 {
+        margin-bottom: 1rem;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 4.5rem;
+        margin-top: -0.7rem;
+      }
+      .radio {
+        font-size: inherit;
+        font-weight: 500;
+        text-transform: capitalize;
+        display: inline-block;
+        vertical-align: middle;
+        color: #000000;
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+
+        & + .radio {
+          margin-left: 20px;
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        span {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          border: 3px solid darken($bg-color, 30%);
+          position: absolute;
+          left: 0;
+          top: -2px;
+
+          &::after {
+            content: "";
+            height: 8px;
+            width: 8px;
+            background: darken($bg-color, 50%);
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            display: block;
+            transform: translate(-50%, -50%) scale(0);
+            transition: 200ms linear 0s;
+          }
+        }
+
+        input[type="radio"]:checked ~ span::after {
+          transform: translate(-50%, -50%) scale(1);
         }
       }
     }

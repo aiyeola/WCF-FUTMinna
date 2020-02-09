@@ -76,7 +76,7 @@ body {
   font-family: "Crimson Pro", serif;
 }
 
-.container form label {
+.container form .popup-label {
   display: block;
   position: absolute;
   font-family: inherit;
@@ -92,13 +92,13 @@ body {
   /* Chrome, Safari, Edge, Opera */
 }
 
-.container form input:placeholder-shown + label {
+.container form input:placeholder-shown + .popup-label {
   visibility: hidden;
   z-index: -1;
 }
 
-.container form input:not(:placeholder-shown) + label,
-.container form input:focus:not(:placeholder-shown) + label {
+.container form input:not(:placeholder-shown) + .popup-label,
+.container form input:focus:not(:placeholder-shown) + .popup-label {
   visibility: visible;
   z-index: 2;
   opacity: 1;
@@ -116,7 +116,7 @@ body {
   margin: 0;
 }
 
-.container form input[type="text"], .container form input[type="password"], .container form input[type="number"] {
+.container form input[type="text"], .container form input[type="password"], .container form input[type="tel"], .container form input[type="number"] {
   border: none;
   border-bottom: 1px solid #ffffff;
   background: transparent;
@@ -126,7 +126,7 @@ body {
   transition: all ease 0.5s;
 }
 
-.container form input[type="text"]:focus, .container form input[type="text"]:active, .container form input[type="password"]:focus, .container form input[type="password"]:active, .container form input[type="number"]:focus, .container form input[type="number"]:active {
+.container form input[type="text"]:focus, .container form input[type="text"]:active, .container form input[type="password"]:focus, .container form input[type="password"]:active, .container form input[type="tel"]:focus, .container form input[type="tel"]:active, .container form input[type="number"]:focus, .container form input[type="number"]:active {
   -webkit-animation: border-style 1s ease forwards;
           animation: border-style 1s ease forwards;
   background: transparent;
@@ -147,6 +147,75 @@ body {
 .container form input[type="submit"]:hover {
   cursor: pointer;
   background: #ff0b0b;
+}
+
+.container form .radio-group {
+  padding: 0 1rem 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .container form .radio-group {
+    padding: 0 0.2rem 1rem 0;
+  }
+}
+
+.container form .radio-group h4 {
+  margin-bottom: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 4.5rem;
+  margin-top: -0.7rem;
+}
+
+.container form .radio-group .radio {
+  font-size: inherit;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+  vertical-align: middle;
+  color: #000000;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.container form .radio-group .radio + .radio {
+  margin-left: 20px;
+}
+
+.container form .radio-group .radio input[type="radio"] {
+  display: none;
+}
+
+.container form .radio-group .radio span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 3px solid #c37c7c;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.container form .radio-group .radio span::after {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #944545;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  display: block;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms linear 0s;
+  transition: 200ms linear 0s;
+}
+
+.container form .radio-group .radio input[type="radio"]:checked ~ span::after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
 }
 
 .container p {
