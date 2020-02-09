@@ -14,11 +14,12 @@ const insertRecord = (req, res) => {
   let bioForm = new bioDataModel();
   (bioForm.fullName = req.body.fullName),
     (bioForm.department = req.body.department),
+    (bioForm.email = req.body.email),
     (bioForm.level = req.body.level),
     (bioForm.contactNumber1 = req.body.contactNumber1),
     (bioForm.contactNumber2 = req.body.contactNumber2),
-    (bioForm.hobbies = req.body.hobbies),
-    (bioForm.mentors = req.body.mentors);
+    (bioForm.sex = req.body.sex),
+    (bioForm.campus = req.body.campus);
 
   bioForm.save((err, doc) => {
     if (!err) res.redirect("/newrequest");
@@ -35,7 +36,7 @@ router.get("/data", (req, res) => {
   bioDataModel.find((err, docs) => {
     if (!err) {
       res.render("database", {
-        list: docs
+        data: docs
       });
     } else console.log("Error in retrieving student database: " + err);
   });
