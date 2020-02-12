@@ -1,10 +1,10 @@
 <div class="container">
-    <img src="./dist/logo.jpg" class="avatar" alt="YAF Logo" srcset="">
+    <img src="./dist/logo.jpg" class="avatar" alt="YAF Logo">
     <h1>WCF FUTMinna BioData Form</h1>
 
     <form action="/" method="POST" autocomplete="off">
         <input type="text" name="fullName" id="name" placeholder="Full Name" required>
-        <label for="name" class="popup-label">Full Name</label>
+        <label for="name" class="popup-label">Full Name (Surname First)</label>
 
         <input type="text" name="department" id="department" placeholder="Department" required>
         <label for="department" class="popup-label">Department</label>
@@ -12,15 +12,23 @@
         <input type="email" name="email" id="email" placeholder="e-mail" required>
         <label for="email" class="popup-label">E-mail</label>
 
+        <input type="text" name="schoolAddress" id="schoolAddress" placeholder="Address" required>
+        <label for="schoolAddress" class="popup-label">Address (In School Oh!)</label>
+
+        <input type="text" name="homeAddress" id="homeAddress" placeholder="Home Address" required>
+        <label for="homeAddress" class="popup-label">Address (Away from School)</label>
 
         <input type="number" name="level" id="level" placeholder="level" required>
         <label for="level" class="popup-label">Level</label>
 
         <input type="tel" name="contactNumber1" id="contactNumber1" placeholder="Contact Number 1" required>
-        <label for="contactNumber1" class="popup-label">Preferably WhatsApp &#129488;</label>
+        <label for="contactNumber1" class="popup-label">Preferably WhatsApp &#128578;</label>
 
         <input type="tel" name="contactNumber2" id="contactNumber2" placeholder="Contact Number 2">
         <label for="contactNumber2" class="popup-label">Phone Number</label>
+
+        <input type="text" name="origin" id="origin" placeholder="State of Origin" required>
+        <label for="origin" class="popup-label">State of Origin</label>
 
         <div class="radio-group">
         
