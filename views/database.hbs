@@ -1,17 +1,22 @@
-
 <div class="container1">
 	<img src="./dist/logo.jpg" class="avatar" alt="YAF Logo" srcset="">
-	<h3>Show list of students that have submitted</h3>
+	<h3>List of students that have submitted their details</h3>
+
+		<i>
+			<input type="search" name="" id="">
+		</i>
+
 	<table>
 		<thead>
 			<tr>
 				<th>Full Name</th>
 				<th>Department</th>
+				<th>e-mail</th>
 				<th>Level</th>
 				<th>Contact Number 1</th>
 				<th>Contact Number 2</th>
-				<th>Hobbies</th>
-				<th>Mentors</th>
+				<th>Sex</th>
+				<th>Campus</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -19,11 +24,12 @@
 			<tr>
 				<td>{{this.fullName}}</td>
 				<td>{{this.department}}</td>
+				<td>{{this.email}}</td>
 				<td>{{this.level}}</td>
 				<td>{{this.contactNumber1}}</td>
 				<td>{{this.contactNumber2}}</td>
-				<td>{{this.hobbies}}</td>
-				<td>{{this.mentors}}</td>
+				<td>{{this.sex}}</td>
+				<td>{{this.campus}}</td>
 			</tr>
 			{{/each}}
 		</tbody>
