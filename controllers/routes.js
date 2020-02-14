@@ -1,7 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const router = express.Router();
-const bioDataModel = mongoose.model("BioForm"); // schema for the collection 'bioForm'
+const BioForm = require("../models/submitData"); // schema for the collection 'bioForm'
 
 router.get("/", (req, res) => {
   res.render("index");
@@ -23,7 +22,7 @@ const insertRecord = (req, res) => {
     campus
   } = req.body;
 
-  const bioForm = new bioDataModel({
+  const bioForm = new BioForm({
     fullName,
     department,
     email,
@@ -47,7 +46,7 @@ router.get("/newrequest", (req, res) => {
 });
 
 router.get("/data", (req, res) => {
-  bioDataModel.find((err, docs) => {
+  BioForm.find((err, docs) => {
     if (!err) {
       res.render("database", {
         data: docs
