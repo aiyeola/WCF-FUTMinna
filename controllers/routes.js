@@ -12,15 +12,17 @@ router.post("/", (req, res) => {
 });
 
 const insertRecord = (req, res) => {
-  const fullName = req.body.fullName;
-  const department = req.body.department;
-  const email = req.body.email;
-  const level = req.body.level;
-  const contactNumber1 = req.body.contactNumber1;
-  const contactNumber2 = req.body.contactNumber2;
-  const sex = req.body.sex;
-  const campus = req.body.campus;
-  
+  const {
+    fullName,
+    department,
+    email,
+    level,
+    contactNumber1,
+    contactNumber2,
+    sex,
+    campus
+  } = req.body;
+
   const bioForm = new bioDataModel({
     fullName,
     department,
@@ -39,6 +41,7 @@ const insertRecord = (req, res) => {
     }
   });
 };
+
 router.get("/newrequest", (req, res) => {
   res.render("index2");
 });
