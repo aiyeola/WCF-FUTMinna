@@ -5,7 +5,9 @@ const app = express();
 const path = require("path");
 const expressHandlebars = require("express-handlebars");
 const bodyparser = require("body-parser");
-const routes = require("./controllers/routes");
+const indexRoutes = require("./routes/index");
+const adminRoutes = require("./routes/admin");
+const databaseRoutes = require("./routes/database");
 const morgan = require("morgan");
 const errorHandler = require("errorhandler");
 
@@ -36,7 +38,9 @@ app.engine(
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname + "/public")));
 
-app.use("/", routes);
+app.use("/", indexRoutes);
+app.use("/admin", adminRoutes);
+app.use("/database", databaseRoutes);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
