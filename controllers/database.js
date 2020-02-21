@@ -1,6 +1,6 @@
-const BioForm = require("../models/submitData");
+const BioForm = require("../models/bioForm");
 
-exports.render_student_data = (req, res) => {
+const render_student_data = (req, res) => {
   BioForm.find((err, docs) => {
     if (!err) {
       res.render("database", {
@@ -8,4 +8,8 @@ exports.render_student_data = (req, res) => {
       });
     } else console.log("Error in retrieving student database: " + err);
   });
+};
+
+module.exports = {
+  render_student_data
 };

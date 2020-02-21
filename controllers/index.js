@@ -1,8 +1,8 @@
-const BioForm = require("../models/submitData"); // schema for the collection 'bioForm'
+const BioForm = require("../models/bioForm"); // schema for the collection 'bioForm'
 
-exports.render_index = (req, res) => res.render("index");
+const render_index = (req, res) => res.render("index");
 
-exports.insert_record = (req, res) => {
+const insert_record = (req, res) => {
   const {
     fullName,
     department,
@@ -25,12 +25,16 @@ exports.insert_record = (req, res) => {
     campus
   });
 
-  bioForm.save((err, doc) => {
-    if (!err) res.redirect("/new_request");
-    else {
-      console.log("Error during record insertion : " + err);
-    }
-  });
+  bioForm
+    .save()
+    .then(res.redirect("/new_request"))
+    .catch(error => `Error inserting record: ${error}`);
 };
 
-exports.render_new_request = (req,res) => res.render("new_response")
+const render_new_request = (req, res) => res.render("new_response");
+
+module.exports = {
+  render_index,
+  insert_record,
+  render_new_request
+};
