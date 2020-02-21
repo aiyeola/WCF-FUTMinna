@@ -9,7 +9,7 @@ const {
   allowInsecurePrototypeAccess
 } = require("@handlebars/allow-prototype-access");
 const bodyparser = require("body-parser");
-const cors = require("cors")
+const cors = require("cors");
 const indexRoutes = require("./routes/index");
 const adminRoutes = require("./routes/admin");
 const adminRegisterRoutes = require("./routes/admin_register");
@@ -26,7 +26,14 @@ app.use(
 app.use(bodyparser.json());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  if (req.method == "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "GET, POST");
+    return res.status(200).json({});
+  }
   next();
 });
 
