@@ -1,13 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const IndexController = require("../controllers/index")
+const {
+  render_index,
+  insert_record,
+  render_new_request
+} = require("../controllers/index");
 
-router.get("/", IndexController.render_index);
+router.get("/", render_index);
 
-router.post("/", IndexController.insert_record);
+router.post("/", insert_record);
 
-
-router.get("/new_request", IndexController.render_new_request);
+router.get("/new_request", render_new_request);
 
 module.exports = router;

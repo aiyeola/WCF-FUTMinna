@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const { checkAuth } = require("../utils/checkAuth")
 
-const DatabaseController = require("../controllers/database");
+const { render_student_data } = require("../controllers/database");
 
-router.get("/", DatabaseController.render_student_data);
+router.get("/", checkAuth, render_student_data);
 
 module.exports = router;
