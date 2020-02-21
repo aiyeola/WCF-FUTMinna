@@ -10,7 +10,10 @@ const bioSchema = new mongoose.Schema(
       type: String
     },
     email: {
-      type: String
+      type: String,
+      required: true,
+      unique: true,
+      match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     level: {
       type: Number
@@ -38,13 +41,11 @@ const bioSchema = new mongoose.Schema(
 // });
 // Custom Validation for email
 // bioSchema.path("email").validate((val) =>{
-//   emailRegex = /\n/ // Still to implement the regex for email
+//   emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/ // Still to implement the regex for email
 //   return emailRegex.test(val)
 // }, "Invalid email")
 
 // Custom Validation for contact number
-
-const bioForm = mongoose.model("BioForm", bioSchema);
+module.exports = mongoose.model("BioForm", bioSchema);
 // first parameter is the name of the collection and also the model name
 // second parameter is the schema to be used for the model
-module.exports = bioForm;
