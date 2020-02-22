@@ -1,21 +1,23 @@
 const { sign } = require("jsonwebtoken");
 
-const createAccessToken = (username, userId) => {
-  return sign({ username, userId }, process.env.ACCESS_TOKEN_SECRET, {
+const createAccessToken = userId => {
+  return sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
     expiresIn: "15m"
   });
 };
 
-const createRefreshToken = (username, userId) => {
-  return sign({ username, userId }, process.env.REFRESH_TOKEN_SECRET, {
+const createRefreshToken = userId => {
+  return sign({ userId }, process.env.REFRESH_TOKEN_SECRET, {
     expiresIn: "7d"
   });
 };
 
 const sendAccessToken = (req, res, accessToken) => {
-  res.send({
-    accessToken,
-    username: req.body.username
+  const options = {
+    headers: { authorization: `Bearer ${accessToken}` }
+  };
+  res.headers["authorization"]({
+    accessToken
   });
 };
 
