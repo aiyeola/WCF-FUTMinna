@@ -12,7 +12,6 @@ const bodyparser = require("body-parser");
 const cors = require("cors");
 const indexRoutes = require("./routes/index");
 const adminRoutes = require("./routes/admin");
-const adminRegisterRoutes = require("./routes/admin_register");
 const databaseRoutes = require("./routes/database");
 const morgan = require("morgan");
 const errorHandler = require("errorhandler");
@@ -54,10 +53,10 @@ app.engine(
 );
 
 app.set("view engine", "hbs");
-app.use(express.static(path.join(__dirname + "/public")));
+app.use(express.static(`${__dirname}/public/`));
+
 
 app.use("/", indexRoutes);
-app.use("/admin_register", adminRegisterRoutes);
 app.use("/admin", adminRoutes);
 app.use("/database", databaseRoutes);
 
