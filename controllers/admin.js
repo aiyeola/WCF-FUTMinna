@@ -68,6 +68,8 @@ const login_admin = async (req, res) => {
     // send access token to  the authorization header
     sendRefreshToken(res, refreshToken);
     sendAccessToken(req, res, accessToken);
+
+    res.redirect("/database");
   } catch (error) {
     console.log(error);
     res.send({
