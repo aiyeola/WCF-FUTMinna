@@ -2,7 +2,8 @@ const { verify } = require("jsonwebtoken");
 
 const checkAuth = (req, res, next) => {
   try {
-    const authorization = req.headers["authorization"];
+    const authorization = req.header["Authorization"];
+    console.log(authorization)
     if (!authorization) throw new Error("You need to log in");
     const token = authorization.split(" ")[1];
     const { userId } = verify(token, process.env.ACCESS_TOKEN_SECRET);

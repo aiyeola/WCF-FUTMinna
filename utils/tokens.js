@@ -13,12 +13,7 @@ const createRefreshToken = userId => {
 };
 
 const sendAccessToken = (req, res, accessToken) => {
-  const options = {
-    headers: { authorization: `Bearer ${accessToken}` }
-  };
-  res.headers["authorization"]({
-    accessToken
-  });
+  res.setHeader("Authorization", `Bearer ${accessToken}`);
 };
 
 const sendRefreshToken = (res, refreshToken) => {
