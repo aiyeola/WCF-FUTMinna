@@ -4,6 +4,6 @@ const { checkAuth } = require("../utils/checkAuth")
 
 const { render_student_data } = require("../controllers/database");
 
-router.get("/", checkAuth, render_student_data);
+router.get("/",  render_student_data);
 
 module.exports = router;
